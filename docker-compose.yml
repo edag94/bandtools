@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  bnode:
+    container_name: bnode
+    image: rickityd/bnode:first
+    ports:
+      - 26656:26656
+      - 26657:26657
+    volumes:
+      - /home/erdagena/.bandd:/root/.bandd

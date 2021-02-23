@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westus2"
+        },
+        "containerName": {
+            "value": "ci-sentry-1-westus2"
+        },
+        "imageType": {
+            "value": "Public"
+        },
+        "imageName": {
+            "value": "rickityd/bnode:first"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "numberCpuCores": {
+            "value": "2"
+        },
+        "memory": {
+            "value": "2"
+        },
+        "restartPolicy": {
+            "value": "OnFailure"
+        },
+        "ipAddressType": {
+            "value": "Public"
+        },
+        "ports": {
+            "value": [
+                {
+                    "port": "80",
+                    "protocol": "TCP"
+                }
+            ]
+        },
+        "dnsNameLabel": {
+            "value": "ci-sentry-1"
+        }
+    }
+}
