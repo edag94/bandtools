@@ -8,9 +8,6 @@
         "containerName": {
             "value": "ci-sentry-1-westus2"
         },
-        "imageType": {
-            "value": "Public"
-        },
         "imageName": {
             "value": "rickityd/bnode:first"
         },
@@ -41,7 +38,7 @@
             "value": "ci-sentry-1"
         },
         "storageAccountKey": {
-            "value": "<redacted>"
+            "value": "sicBaah9ekXSZxDk0DaY2RzPyrVa63tliWvb5udQCnvPksXyL4g5KyvjvhA5inO6n/rTg4VCWbC7oF1vdaTRqw=="
         },
         "azureFileShareVirtualName": {
             "value": "blockchain"

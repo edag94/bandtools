@@ -53,7 +53,7 @@
         "azureFileShareAzureName": {
             "type": "String"
         },
-        "azureFileShareSubfolder": {
+        "azureFileShareSubFolder": {
             "type": "String"
         }
     },
