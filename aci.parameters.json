@@ -39,6 +39,15 @@
         },
         "dnsNameLabel": {
             "value": "ci-sentry-1"
+        },
+        "storageAccountKey": {
+            "value": "<redacted>"
+        },
+        "azureFileShareName": {
+            "value": "blockchainstate-share"
+        },
+        "storageAccountName": {
+            "value": "blockchainstate"
         }
     }
 }

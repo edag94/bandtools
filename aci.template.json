@@ -47,6 +47,15 @@
         },
         "dnsNameLabel": {
             "type": "String"
+        },
+        "storageAccountName": {
+            "type": "String"
+        },
+        "storageAccountKey": {
+            "type": "String"
+        },
+        "azureFileShareName": {
+            "type": "String"
         }
     },
     "resources": [
@@ -68,7 +77,13 @@
                                     "memoryInGB": "[float(parameters('memory'))]"
                                 }
                             },
-                            "ports": "[parameters('ports')]"
+                            "ports": "[parameters('ports')]",
+                            "volumeMounts": [
+                                {
+                                    "name": "[parameters('azureFileShareName')]",
+                                    "mountPath": "/aci/logs"
+                                }
+                            ]
                         }
                     }
                 ],
@@ -78,7 +93,18 @@
                     "type": "[parameters('ipAddressType')]",
                     "ports": "[parameters('ports')]",
                     "dnsNameLabel": "[parameters('dnsNameLabel')]"
-                }
+                },
+                "volumes": [
+                    {
+                        "name": "[parameters('azureFileShareName')]",
+                        "azureFile": {
+                            "shareName": "shared",
+                            // "readOnly": "boolean", need to add this later for snapshotting
+                            "storageAccountName": "[parameters('storageAccountName')]",
+                            "storageAccountKey": "[parameters('storageAccountKey')]"
+                        }
+                    }
+                ]
             }
         }
     ]
