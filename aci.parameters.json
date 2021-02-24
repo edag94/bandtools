@@ -43,8 +43,14 @@
         "storageAccountKey": {
             "value": "<redacted>"
         },
-        "azureFileShareName": {
+        "azureFileShareVirtualName": {
+            "value": "blockchain"
+        },
+        "azureFileShareAzureName": {
             "value": "blockchainstate-share"
+        },
+        "azureFileShareSubFolder": {
+            "value": "sentry"
         },
         "storageAccountName": {
             "value": "blockchainstate"

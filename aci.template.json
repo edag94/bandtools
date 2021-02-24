@@ -8,13 +8,6 @@
         "containerName": {
             "type": "String"
         },
-        "imageType": {
-            "allowedValues": [
-                "Public",
-                "Private"
-            ],
-            "type": "String"
-        },
         "imageName": {
             "type": "String"
         },
@@ -54,7 +47,13 @@
         "storageAccountKey": {
             "type": "String"
         },
-        "azureFileShareName": {
+        "azureFileShareVirtualName": {
+            "type": "String"
+        },
+        "azureFileShareAzureName": {
+            "type": "String"
+        },
+        "azureFileShareSubfolder": {
             "type": "String"
         }
     },
@@ -80,8 +79,8 @@
                             "ports": "[parameters('ports')]",
                             "volumeMounts": [
                                 {
-                                    "name": "[parameters('azureFileShareName')]",
-                                    "mountPath": "/aci/logs"
+                                    "name": "[parameters('azureFileShareVirtualName')]",
+                                    "mountPath": "/root/.bandd"
                                 }
                             ]
                         }
@@ -96,9 +95,9 @@
                 },
                 "volumes": [
                     {
-                        "name": "[parameters('azureFileShareName')]",
+                        "name": "[parameters('azureFileShareVirtualName')]",
                         "azureFile": {
-                            "shareName": "shared",
+                            "shareName": "[concat(parameters('azureFileShareAzureName'), '/', parameters('azureFileShareSubFolder'))]",
                             // "readOnly": "boolean", need to add this later for snapshotting
                             "storageAccountName": "[parameters('storageAccountName')]",
                             "storageAccountKey": "[parameters('storageAccountKey')]"
