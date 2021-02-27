@@ -10,4 +10,4 @@ EXPOSE 26657
 WORKDIR ${HOME}/bandchain/chain
 RUN make install
 
-CMD bandd start
+CMD bandd start > /root/bandlog.txt
